@@ -1,5 +1,6 @@
 import styles from "@/styles/Happy.module.css";
 import Layout from "@/components/Layout";
+import { getHappyMood } from "@/components/Moodobjects";
 
 export default function Happy() {
   return (

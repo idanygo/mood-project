@@ -12,11 +12,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.wrapper}>
-        <div className={styles.headline}>
-          <h1>What’s your mood today?</h1>
-        </div>
-        <main>
+      <main>
+        <div className={styles.wrapper}>
+          <div className={styles.headline}>
+            <h1>What’s your mood today?</h1>
+          </div>
           <div className={styles.emojiContainer}>
             <div className={styles.happyStressContainer}>
               <Link className={styles.happyImg} href={"/happy"}>
@@ -41,8 +41,8 @@ export default function Home() {
               today and we’ll give you exercises based on your mood. blablabla
             </h3>
           </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </>
   );
 }

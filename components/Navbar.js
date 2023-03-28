@@ -1,4 +1,4 @@
-export default function Header() {
+export default function Navbar() {
   return (
     <div className="Header">
       <h1>HEADER</h1>

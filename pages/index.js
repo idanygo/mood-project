@@ -3,7 +3,6 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import happySvg from "../public/happy.svg";
-import Header from "../components/Navbar";
 
 export default function Home() {
   return (

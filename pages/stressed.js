@@ -1,5 +1,4 @@
-import styles from "@/styles/Stressed.module.css";
-import Layout from "../components/Layout";
+import Layout from "@/components/Layout";
 
 export default function Stressed() {
   return (

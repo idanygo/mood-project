@@ -1,0 +1,16 @@
+import Link from "next/link";
+
+const NavItem = ({ href, text, active }) => {
+  return (
+    <Link
+      href={href}
+      className={`
+    nav__link ${active ? "active" : ""}
+    `}
+    >
+      {text}
+    </Link>
+  );
+};
+
+export default NavItem;

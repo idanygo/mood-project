@@ -3,7 +3,6 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import happySvg from "../public/happy.svg";
-import Header from "./components/Header";
 
 export default function Home() {
   return (
@@ -13,14 +12,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <div className={styles.wrapper}>
         <div className={styles.headline}>
           <h1>What’s your mood today?</h1>
         </div>
         <main>
           <div className={styles.emojiContainer}>
-            <div className={styles.happystressContainer}>
+            <div className={styles.happyStressContainer}>
               <Link className={styles.happyImg} href={"/happy"}>
                 <Image src={happySvg} alt="Happy emoji" />
               </Link>
@@ -28,7 +26,7 @@ export default function Home() {
                 <Image src={happySvg} alt="Stressed emoji" />
               </Link>
             </div>
-            <div className={styles.tiredallContainer}>
+            <div className={styles.tiredAllContainer}>
               <Link className={styles.tiredImg} href={"/tired"}>
                 <Image src={happySvg} alt="Tired emoji" />
               </Link>

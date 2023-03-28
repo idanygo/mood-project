@@ -1,6 +1,4 @@
-import styles from "@/styles/All.module.css";
-
-export default function ALL() {
+export default function All() {
   return (
     <>
       <div>

@@ -6,14 +6,8 @@
   justify-content: center;
 }
 
-.happyImg {
-  width: 100px;
-}
-
-.tiredImg {
-  width: 100px;
-}
-
+.happyImg,
+.tiredImg,
 .stressedImg {
   width: 100px;
 }
@@ -24,13 +18,11 @@
 }
 
 @media screen and (max-width: 768px) {
-  .happystressContainer {
+  .happyStressContainer,
+  .tiredAllContainer {
     display: flex;
   }
 
-  .tiredallContainer {
-    display: flex;
-  }
   .wrapper {
     display: flex;
     flex-direction: column;

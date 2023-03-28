@@ -1,6 +1,10 @@
 import Head from "next/head";
 
-const Layout = ({ children, backgroundColor, color }) => {
+const Layout = ({
+  children,
+  backgroundColor = "#faedcd",
+  color = "#000000",
+}) => {
   return (
     <>
       <Head>

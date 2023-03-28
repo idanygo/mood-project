@@ -12,26 +12,26 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className={styles.mainwrapper}>
         <div className={styles.wrapper}>
           <div className={styles.headline}>
             <h1>What’s your mood today?</h1>
           </div>
           <div className={styles.emojiContainer}>
             <div className={styles.happyStressContainer}>
-              <Link className={styles.happyImg} href={"/happy"}>
-                <Image src={happySvg} alt="Happy emoji" />
+              <Link className={styles.happyLink} href={"/happy"}>
+                <div className={styles.happyCircle}>HAPPY</div>
               </Link>
-              <Link className={styles.stressedImg} href={"/stressed"}>
-                <Image src={happySvg} alt="Stressed emoji" />
+              <Link className={styles.stressedLink} href={"/stressed"}>
+                <div className={styles.stressedCircle}>STRESSED</div>
               </Link>
             </div>
             <div className={styles.tiredAllContainer}>
-              <Link className={styles.tiredImg} href={"/tired"}>
-                <Image src={happySvg} alt="Tired emoji" />
+              <Link className={styles.tiredLink} href={"/tired"}>
+                <div className={styles.tiredCircle}>TIRED</div>
               </Link>
-              <Link className={styles.tiredImg} href={"/all"}>
-                <Image src={happySvg} alt="Tired emoji" />
+              <Link className={styles.allLink} href={"/all"}>
+                <div className={styles.allCircle}>ALL</div>
               </Link>
             </div>
           </div>

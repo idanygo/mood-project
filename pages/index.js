@@ -3,6 +3,7 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import Lunga from "@/components/Lunga";
+import Scroll from "@/components/Scroll";
 
 export default function Home() {
   return (
@@ -45,6 +46,8 @@ export default function Home() {
               today and we’ll give you exercises based on your mood. blablabla
             </p>
           </div>
+
+          <Scroll />
         </div>
       </main>
       <section className={styles.lungaWrapper}>

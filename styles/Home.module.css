@@ -47,19 +47,18 @@
 }
 
 .happyCircle {
-  background-color: #ffc0c0;
+  background-color: #7a9b77;
   color: black;
 }
 
 .stressedCircle {
-  background-color: #bfeaf5;
+  background-color: #d66853;
   color: black;
 }
 
 .allCircle {
-  background-color: #faedcd;
+  background-color: #fede98;
   color: black;
-  border: 1px solid black;
 }
 
 .wrapper {
@@ -68,10 +67,9 @@
   justify-content: center;
   text-align: center;
   gap: 60px;
-  margin-top: 20px;
   padding: 0px 15px 0px 15px;
   max-width: 700px;
-  height: 100vh;
+  height: calc(100vh - 83px);
 }
 
 .mainwrapper {

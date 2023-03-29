@@ -54,8 +54,8 @@ export default function Home() {
         <h3 className={styles.breathHeader}>
           Maybe some deep breaths is all you need?
         </h3>
-        <Lunga />
-        <form className={styles.breathForm}>
+        <Lunga growTime={2} shrinkTime={2} />
+        <form className={styles.breathForm} >
           <input placeholder="Seconds for breath in" />
           <input placeholder="Seconds for breath out" />
         </form>

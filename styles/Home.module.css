@@ -92,6 +92,19 @@
   top: 200px;
 }
 
+.breathForm {
+  display: flex;
+  gap: 20px;
+}
+
+.breathForm input {
+  background-color: #faedcd;
+  height: 30px;
+  padding: 10px;
+  border: black 1px solid;
+  border-radius: 10px;
+}
+
 @media screen and (max-width: 768px) {
   .wrapper {
     height: 100vh;
@@ -111,17 +124,4 @@
     scale: 1.1;
     transition: all 0.5s ease;
   }
-}
-
-.breathForm {
-  display: flex;
-  gap: 20px;
-}
-
-.breathForm input {
-  background-color: #faedcd;
-  height: 30px;
-  padding: 10px;
-  border: black 1px solid;
-  border-radius: 10px;
 }

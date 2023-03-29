@@ -1,10 +1,9 @@
 .lunga {
-  width: 200px;
-  height: 200px;
   border-radius: 50%;
   background-color: black;
-  transition: width 2s ease, height 2s ease;
+  transition: width ease-in-out, height ease-in-out;
 }
 .lunga:hover {
   cursor: pointer;
 }
+

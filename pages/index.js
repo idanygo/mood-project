@@ -3,6 +3,7 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import happySvg from "../public/happy.svg";
+import Lunga from "@/components/Lunga";
 
 export default function Home() {
   return (
@@ -43,6 +44,14 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <section className={styles.lungaWrapper}>
+        <h3 className={styles.breathHeader}>Maybe some deep breaths is all you need?</h3>
+        <Lunga />
+        <form className={styles.breathForm}>
+          <input placeholder="Seconds for breath in" />
+          <input placeholder="Seconds for breath out" />
+        </form>
+      </section>
     </>
   );
 }

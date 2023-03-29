@@ -79,6 +79,21 @@
   justify-content: center;
 }
 
+.lungaWrapper {
+  height: 100vh;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.breathHeader {
+  position: absolute;
+  top: 200px;
+}
+
 @media screen and (max-width: 768px) {
   .wrapper {
     height: 100vh;
@@ -98,4 +113,17 @@
     scale: 1.1;
     transition: all 0.5s ease;
   }
+}
+
+.breathForm {
+  display: flex;
+  gap: 20px;
+}
+
+.breathForm input {
+  background-color: #faedcd;
+  height: 30px;
+  padding: 10px;
+  border: black 1px solid;
+  border-radius: 10px;
 }

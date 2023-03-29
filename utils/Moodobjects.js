@@ -1,4 +1,3 @@
-import Happy from "@/pages/[happy]";
 import Link from "next/link";
 
 const moods = [
@@ -56,10 +55,17 @@ const moods = [
 
   {
     id: "tired",
-    title: "Yin Yoga for Deep Relaxation",
+    title: "Deep Relaxation, Stretch, Relieve Anxiety and Heal",
     description:
-      "This yin yoga practice is designed to help you release tension and deeply relax. The poses are held for several minutes and focus on stretching the connective tissues in your body.",
-    link: "https://www.youtube.com/embed/s1mVfWPynC",
+      "This yoga practice is designed to help you relax and get a good night's sleep. The sequence includes gentle stretches and calming poses that promote relaxation and stress relief.",
+    link: "https://www.youtube.com/embed/EzClp1CiW5o",
+  },
+  {
+    id: "stressed",
+    title: "Guided Meditation for Stress Relief",
+    description:
+      "This guided meditation is perfect for anyone who needs to reduce stress and anxiety. The meditation includes calming music and soothing visuals to help you relax and unwind.",
+    link: "https://www.youtube.com/embed/CNgNzunfSSE",
   },
 
   {
@@ -94,10 +100,6 @@ const moods = [
     link: "https://www.youtube.com/embed/F28MGLlpP90",
   },
 ];
-
-export const getHappyMood = (happy) => {
-  return moods[happy];
-};
 
 export const getAllMoods = () => {
   return moods.map((mood) => ({

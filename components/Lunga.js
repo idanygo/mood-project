@@ -1,22 +1,42 @@
-import { useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import styles from "@/styles/Lunga.module.css";
 
-function Lunga() {
-  const [circleSize, setCircleSize] = useState(100);
-  const handleMouseDown = () => {
-    setCircleSize(250); // Increase size to 200 when user clicks
-  };
+function Lunga({ growTime, shrinkTime }) {
+  const [size, setSize] = useState(100);
+  const [isGrowing, setIsGrowing] = useState(true);
 
-  const handleMouseUp = () => {
-    setCircleSize(50); // Decrease size back to 100 when user releases mouse button
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (isGrowing) {
+        setSize((size) => {
+          if (size < 200) {
+            return size + (100 / (growTime * 1000 / 10));
+          } else {
+            setIsGrowing(false);
+            return size;
+          }
+        });
+      } else {
+        setSize((size) => {
+          if (size > 100) {
+            return size - (100 / (shrinkTime * 1000 / 10));
+          } else {
+            setIsGrowing(true);
+            return size;
+          }
+        });
+      }
+    }, 10);
+    return () => clearInterval(interval);
+  }, [isGrowing, growTime, shrinkTime])
 
   return (
     <div
       className={styles.lunga}
-      style={{ width: circleSize, height: circleSize }}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}></div>
+      style={{ width: size, height: size }}
+    >
+
+    </div>
   );
 }
 

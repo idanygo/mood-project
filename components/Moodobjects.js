@@ -59,7 +59,7 @@ const moods = [
     title: "Yin Yoga for Deep Relaxation",
     description:
       "This yin yoga practice is designed to help you release tension and deeply relax. The poses are held for several minutes and focus on stretching the connective tissues in your body.",
-    link: "https://www.youtube.com/embed/s1mVfWPynC",
+    link: "https://www.youtube.com/embed/z3UA96-84MU",
   },
 
   {

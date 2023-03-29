@@ -2,13 +2,16 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import happySvg from "../public/happy.svg";
 
 export default function Home() {
   return (
     <>
       <Head>
         <title>Mood project</title>
+        <meta
+          name="description"
+          content="Find the best workouts and meditations based on your mood right now"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

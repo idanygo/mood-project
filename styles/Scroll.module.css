@@ -1,0 +1,11 @@
+.scrollButton {
+  background-color: #faedcd;
+  justify-content: flex-end;
+  border: 0px;
+  transition: all ease-in 0.5s;
+  font-weight: bolder;
+}
+
+.scrollButton:hover {
+  cursor: pointer;
+}

@@ -36,10 +36,10 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.text}>
-            <h3>
+            <p>
               We know that every day is full of decisions, tell us how you feel
               today and we’ll give you exercises based on your mood. blablabla
-            </h3>
+            </p>
           </div>
         </div>
       </main>

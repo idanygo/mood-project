@@ -1,6 +1,6 @@
 import Link from "next/link";
 import NavItem from "@/components/NavItem";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const menuList = [
   {
@@ -20,9 +20,24 @@ const menuList = [
 const Navbar = () => {
   const [navActive, setNavActive] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  let menuRef = useRef();
+
+  useEffect(() => {
+    let handler = (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        setNavActive(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
+
   return (
     <header>
-      <nav className="nav">
+      <nav className="nav" ref={menuRef}>
         <Link href={"/"} onClick={() => setActiveIndex(0)}>
           <h1 class="logo">MoodMate</h1>
         </Link>

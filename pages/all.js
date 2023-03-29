@@ -1,4 +1,4 @@
-import { getAllMoods } from "@/components/Moodobjects";
+import { getAllMoods } from "@/utils/Moodobjects";
 import React from "react";
 
 export default function All({ moods }) {

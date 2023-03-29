@@ -8,13 +8,8 @@ export default function All({ moods }) {
         <h1 className={styles.heading}>ALL EXERCISES</h1>
         <div className={styles.descriptionContainer}>
           <h3 className={styles.webDesc}>
-            Here you'll find a diverse selection of workouts, meditations, and
-            breathwork exercises to help you take control of your mental and
-            physical wellbeing. Whether you're feeling stressed, anxious, happy,
-            or simply need a pick-me-up, we have something for everyone. <br />
-            Browse through our curated collection of exercises, all designed to
-            support you in your journey towards a healthier, happier you. So
-            take a deep breath, relax, and let's get started!
+            Whether you're feeling stressed, anxious, happy, or simply need a
+            pick-me-up, we have something for everyone.
           </h3>
         </div>
         <div className={styles.cardContainer}>

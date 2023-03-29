@@ -1,6 +1,5 @@
 import { getAllMoods } from "@/utils/Moodobjects";
 import styles from "@/styles/All.module.css";
-import React, { useState } from "react";
 
 export default function All({ moods }) {
   return (

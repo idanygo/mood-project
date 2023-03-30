@@ -9,7 +9,7 @@ const menuList = [
   },
   {
     text: "ABOUT",
-    href: "/stressed",
+    href: "/Aboutus",
   },
   {
     text: "CONTACT",
@@ -39,7 +39,7 @@ const Navbar = () => {
     <header>
       <nav className="nav" ref={menuRef}>
         <Link href={"/"} onClick={() => setActiveIndex(0)}>
-          <h1 class="logo">MoodMate</h1>
+          <h1 className="logo">MoodMate</h1>
         </Link>
         <div onClick={() => setNavActive(!navActive)} className="nav__menuBar">
           <div></div>

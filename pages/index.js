@@ -47,8 +47,9 @@ export default function Home() {
               today and we’ll give you exercises based on your mood. blablabla
             </p>
           </div>
-
-          <Scroll />
+          <div className={styles.arrowWrapper}>
+            <Scroll />
+          </div>
         </div>
       </main>
       <Lunga growTime={2} shrinkTime={2} />

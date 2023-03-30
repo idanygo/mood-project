@@ -9,3 +9,18 @@
 .scrollButton:hover {
   cursor: pointer;
 }
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.arrow:hover {
+  scale: 1.5;
+  transition: all 0.5s ease-in-out;
+}

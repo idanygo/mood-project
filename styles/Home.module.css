@@ -77,6 +77,10 @@
   justify-content: center;
 }
 
+.arrowWrapper {
+  align-items: flex-end;
+}
+
 @media screen and (max-width: 768px) {
   .wrapper {
     height: 100vh;

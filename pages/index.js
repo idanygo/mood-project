@@ -50,16 +50,7 @@ export default function Home() {
           <Scroll />
         </div>
       </main>
-      <section className={styles.lungaWrapper}>
-        <h3 className={styles.breathHeader}>
-          Maybe some deep breaths is all you need?
-        </h3>
-        <Lunga growTime={2} shrinkTime={2} />
-        <form className={styles.breathForm} >
-          <input placeholder="Seconds for breath in" />
-          <input placeholder="Seconds for breath out" />
-        </form>
-      </section>
+      <Lunga growTime={2} shrinkTime={2} />
     </>
   );
 }

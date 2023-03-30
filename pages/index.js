@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Lunga from "@/components/Lunga";
 import Scroll from "@/components/Scroll";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -51,6 +52,7 @@ export default function Home() {
         </div>
       </main>
       <Lunga growTime={2} shrinkTime={2} />
+
     </>
   );
 }

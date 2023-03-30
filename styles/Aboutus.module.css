@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 30px;
+  margin-top: 20px;
+  padding: 0px 15px 0px 15px;
+  max-width: 700px;
+  height: 100vh;
+}
+
+.piccontainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: 100vh;
+  }
+  .anton,
+  .dani,
+  .ida {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .dani {
+    background-color: salmon;
+    color: black;
+  }
+
+  .ida {
+    background-color: #ffc0c0;
+    color: black;
+  }
+
+  .anton {
+    background-color: #bfeaf5;
+    color: black;
+  }
+  .anton:hover,
+  .dani:hover,
+  .ida:hover {
+    scale: 1.1;
+    transition: all 0.5s ease;
+  }
+}

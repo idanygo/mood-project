@@ -43,9 +43,16 @@ export default function Home() {
           </div>
           <div className={styles.text}>
             <p>
-              We know that every day is full of decisions, tell us how you feel
-              today and we’ll give you exercises based on your mood. blablabla
+              {/* We know that every day is full of decisions, tell us how you feel
+              today and we’ll give you exercises based on your mood. blablabla */}
+              Everyday we're faceed with diffrent decisions, some harder than others.
+              There are those who say that from the time we rise in the morning until we crasch at night
+              we have said "yes", "no" or "maybe" to hundreds of questions.
             </p>
+            <br />
+            <p>
+              It's no surprise that you might feel overwhelmed. <strong>But dont worry. We got you. </strong>
+              Just choose a mood thats fits your state of mind right now and we will provied you with some fitting exercises.</p>
           </div>
           <div className={styles.arrowWrapper}>
             <Scroll />

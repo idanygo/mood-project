@@ -1,3 +1,7 @@
+.text p {
+  line-height: 1.5rem;
+}
+
 .emojiContainer {
   display: flex;
   flex-wrap: wrap;
@@ -75,10 +79,6 @@
 .mainwrapper {
   display: flex;
   justify-content: center;
-}
-
-.arrowWrapper {
-  align-items: flex-end;
 }
 
 @media screen and (max-width: 768px) {

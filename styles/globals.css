@@ -126,3 +126,8 @@ header {
   align-items: center;
   background-color: #f1f1f1;
 }
+
+.social {
+  display: flex;
+  gap: 5px;
+}

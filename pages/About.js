@@ -5,8 +5,8 @@ import Image from "next/image";
 export default function AboutUs() {
   return (
     <div className={styles.container}>
-      <h1>Meet your Mates</h1>
       <div className={styles.about}>
+        <h1>Meet your Mates</h1> <br></br>
         <p>
           <b>In 2001, three students named Daniela, Ida, and Anton </b>came
           together with a shared vision to help people manage their stress,
@@ -14,17 +14,16 @@ export default function AboutUs() {
           that provides exercise recommendations to individuals looking to
           improve their mental and physical wellbeing.
         </p>
-
         <p className={styles.mobileOnly}>
-          MoodMate is the brainchild of these three students who understand the
-          importance of exercise in maintaining a healthy lifestyle. Daniela,
-          Ida, and Anton were all passionate about health and wellness and
-          wanted to create a solution that would be accessible to anyone seeking
-          to improve their mental and physical health. Their platform, MoodMate,
-          offers a range of exercise options tailored to each user's individual
-          needs and goals. Whether you're looking to de-stress after a long day,
-          boost your energy levels, or simply improve your overall mood,{" "}
-          <b>MoodMate has you covered.</b>
+          <b> MoodMate </b> is the brainchild of these three students who
+          understand the importance of exercise in maintaining a healthy
+          lifestyle. Daniela, Ida, and Anton were all passionate about health
+          and wellness and wanted to create a solution that would be accessible
+          to anyone seeking to improve their mental and physical health. Their
+          platform, MoodMate, offers a range of exercise options tailored to
+          each user's individual needs and goals. Whether you're looking to
+          de-stress after a long day, boost your energy levels, or simply
+          improve your overall mood, <b>MoodMate has you covered.</b>
         </p>
       </div>
 

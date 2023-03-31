@@ -4,6 +4,7 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 12%;
 }
 
 .wrapperAbout {
@@ -162,11 +163,9 @@
     display: none;
   }
 
-
   .summaryHeadline {
     margin-top: 0%;
   }
-
 
   .summary {
     gap: 30px;

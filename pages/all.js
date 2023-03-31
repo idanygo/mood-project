@@ -20,7 +20,18 @@ export default function All({ moods }) {
   return (
     <>
       <main className={styles.main} key={activeTag}>
-        <h1 className={styles.heading}>ALL EXERCISES</h1>
+        <h1 className={styles.heading}>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 52 52"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="26" cy="26" r="26" fill="#F9DFA1" />
+          </svg>
+          ALL EXERCISES
+        </h1>
         <div className={styles.descriptionContainer}>
           <h3 className={styles.webDesc}>
             Whether you're feeling stressed, anxious, happy, or simply need a

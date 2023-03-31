@@ -7,7 +7,20 @@ export default function Stressed({ moods }) {
   return (
     <Layout backgroundColor="#faedcd">
       <main className={styles.main}>
-        <h1 className={styles.heading}>STRESSED</h1>
+        <h1 className={styles.heading}>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 52 52"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="red_stressed">
+              <circle cx="26" cy="26" r="26" fill="#C86E59" />
+            </g>
+          </svg>
+          STRESSED
+        </h1>
         <div className={styles.descriptionContainer}>
           <h3 className={styles.webDesc}>
             "Stress is not what happens to us. It's our response to what

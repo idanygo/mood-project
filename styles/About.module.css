@@ -1,136 +1,185 @@
-.anton,
-.dani,
-.ida {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 50%;
+.mainWrapperAbout {
+  margin-top: 6%;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.about {
-  line-height: 1.5rem;
-  margin-bottom: 30px;
-}
-
-.container {
-  height: 100vh;
+.wrapperAbout {
+  max-width: 80%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0px 15px 0px 15px;
+  min-height: calc(100vh - 83px);
 }
 
-.picontainer {
+.header {
+  margin-bottom: 6%;
+}
+
+.slogan {
+  font-weight: 200;
+  letter-spacing: 0.2em;
+}
+
+.mission {
+  font-size: 18px;
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 6%;
+  line-height: 150%;
+}
+
+.summaryHeadline {
+  letter-spacing: 0.1em;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 20%;
+}
+
+.summaryContainer {
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  margin-bottom: 3%;
+  flex-wrap: wrap;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  margin-bottom: 9%;
+}
+
+.meditateBreath {
+  display: flex;
   align-items: center;
+  gap: 100px;
+}
+.workoutYoga {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.teamHeader {
+  letter-spacing: 0.03em;
+  font-size: 28px;
+  margin-bottom: 6%;
+}
+
+.card {
+  min-height: 10px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-    height: auto;
-    padding: 20px;
-  }
-
-  .picontainer {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .anton,
-  .dani,
-  .ida {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 20px;
-  }
-
-  .mobileOnly {
-    display: none;
-  }
+.cardImg {
+  border-radius: 50%;
+  object-fit: cover;
+  border-style: none;
 }
 
-@media screen and (min-width: 769px) {
-  .container {
+.cardContent {
+  padding: 20px;
+  display: flex;
+  flex: 1 0 auto;
+  display: grid;
+  grid-template-rows: auto 2fr;
+}
+
+.picName {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 6%;
+  margin-bottom: 2%;
+}
+
+.picText {
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 0;
+}
+
+.favQuote {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
     height: 100vh;
   }
 
-  .picontainer {
-    justify-content: space-evenly;
+  .header {
+    margin-bottom: 0px;
   }
 
-  .anton,
-  .dani,
-  .ida {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 0;
+  .mission {
+    max-width: none;
+    font-weight: 300;
+    margin-bottom: 0px;
   }
 
-  .idacard,
-  .danicard,
-  .antoncard {
-    width: 350px;
-    height: 350px;
-    margin: 0 20px;
+  .wrapperAbout {
+    max-width: none;
+    gap: 50px;
   }
 
-  .idacard .about,
-  .danicard .about,
-  .antoncard .about {
-    margin-top: 20px;
+  .summary {
+    margin-bottom: 0%;
   }
 
-  .mobileOnly {
-    display: block;
-  }
-}
-
-.idacard,
-.danicard,
-.antoncard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: #ffffff;
-  border-radius: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.idacard:hover,
-.danicard:hover,
-.antoncard:hover {
-  box-shadow: 0px 8px 20px rgba(1, 1, 1, 1);
-}
-
-.about {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  line-height: 1.5rem;
-  text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .idacard,
-  .danicard,
-  .antoncard {
-    width: 300px;
-    height: auto;
-    margin-bottom: 30px;
-    padding: 20px;
-    box-sizing: border-box;
+  .picName {
+    margin-top: 0%;
+    margin-bottom: 0%;
   }
 
-  .idacard .about,
-  .danicard .about,
-  .antoncard .about {
-    margin-top: 20px;
-    font-size: 1rem;
-    line-height: 1.5rem;
+  .card {
+    margin-bottom: 10px;
+    border-bottom: 0.5px dotted black;
+  }
+  .headline {
+    margin-top: 6%;
+  }
+
+  .hideMobile {
+    display: none;
+  }
+
+
+  .summaryHeadline {
+    margin-top: 0%;
+  }
+
+
+  .summary {
+    gap: 30px;
+  }
+
+  .teamHeader {
+    margin-bottom: 0%;
+  }
+
+  .meditateBreath {
+    gap: 40px;
+  }
+  .workoutYoga {
+    gap: 40px;
   }
 }

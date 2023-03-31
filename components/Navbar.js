@@ -9,11 +9,11 @@ const menuList = [
   },
   {
     text: "ABOUT",
-    href: "/Aboutus",
+    href: "/About",
   },
   {
-    text: "CONTACT",
-    href: "/tired",
+    text: "ALL EXERCISES ",
+    href: "/all",
   },
 ];
 

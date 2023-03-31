@@ -11,6 +11,6 @@ export default function Scroll() {
     });
   }
 
-  return <button className={styles.scrollButton} type="button" onClick={handleScroll}>Scroll down</button>;
+  return <button className={styles.scrollButton} type="button" onClick={handleScroll}><i className={styles.arrow}></i></button >;
 
 }

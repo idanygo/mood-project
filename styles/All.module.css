@@ -40,7 +40,6 @@
   width: 300px;
   display: flex;
   flex-direction: column;
-  transition: all 0.5s;
 }
 
 .cardVideo {

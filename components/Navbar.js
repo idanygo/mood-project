@@ -9,7 +9,7 @@ const menuList = [
   },
   {
     text: "ABOUT",
-    href: "/About",
+    href: "/about",
   },
   {
     text: "ALL EXERCISES ",

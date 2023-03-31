@@ -8,8 +8,13 @@ export default function Footer() {
     <>
       <div className="footer">
         <p>©2023 Team Campus </p>
+        <div className='mapWrapper'>
+          <Link href={"https://goo.gl/maps/EmmoMeEQH7Y8ZNt58"}> <Image src="/map-icon.png" width={35} height={35} /></Link>
+          <p>Solnavägen 3h, 113 63 Stockholm</p>
+        </div>
         <div className="social">
           <Link href={"https://github.com/idanygo/mood-project"}> <Image src="/github-mark.png" width={35} height={35} /> </Link>
+
           <Image src="/fb-logo-rb.png" width={35} height={35} />
         </div>
       </div>

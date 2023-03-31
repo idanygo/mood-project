@@ -28,6 +28,7 @@ const Navbar = () => {
         setNavActive(false);
       }
     };
+
     document.addEventListener("mousedown", handler);
 
     return () => {

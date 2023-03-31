@@ -5,7 +5,7 @@ import { getAllMoods } from "@/utils/Moodobjects";
 export default function Stressed({ moods }) {
   const stressedMoods = moods.filter((mood) => mood.id === "stressed");
   return (
-    <Layout backgroundColor="#bfeaf5">
+    <Layout backgroundColor="#faedcd">
       <main className={styles.main}>
         <h1 className={styles.heading}>STRESSED</h1>
         <div className={styles.descriptionContainer}>

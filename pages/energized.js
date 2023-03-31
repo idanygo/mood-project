@@ -2,12 +2,12 @@ import styles from "@/styles/All.module.css";
 import Layout from "@/components/Layout";
 import { getAllMoods } from "@/utils/Moodobjects";
 
-export default function Happy({ moods }) {
-  const happyMoods = moods.filter((mood) => mood.id === "happy");
+export default function Energized({ moods }) {
+  const energizedMoods = moods.filter((mood) => mood.id === "energized");
   return (
-    <Layout backgroundColor="#ffc0c0">
+    <Layout backgroundColor="#faedcd">
       <main className={styles.main}>
-        <h1 className={styles.heading}>HAPPY</h1>
+        <h1 className={styles.heading}>ENERGIZED</h1>
         <div className={styles.descriptionContainer}>
           <h3 className={styles.webDesc}>
             "Happiness is not something ready made. It comes from your own
@@ -15,18 +15,18 @@ export default function Happy({ moods }) {
           </h3>
         </div>
         <div className={styles.cardContainer}>
-          {happyMoods.map((happy) => (
-            <div className={styles.card} key={happy.id}>
+          {energizedMoods.map((energi) => (
+            <div className={styles.card} key={energi.id}>
               <iframe
                 className={styles.cardVideo}
-                src={happy.link}
-                alt={happy.description}
+                src={energi.link}
+                alt={energi.description}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
               <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{happy.title}</h3>
-                <p className={styles.cardDescription}>{happy.description}</p>
+                <h3 className={styles.cardTitle}>{energi.title}</h3>
+                <p className={styles.cardDescription}>{energi.description}</p>
               </div>
             </div>
           ))}
@@ -38,8 +38,8 @@ export default function Happy({ moods }) {
 
 export async function getStaticProps() {
   const moods = getAllMoods();
-  const happyMoods = moods.filter((mood) => mood.id === "happy");
+  const energizedMoods = moods.filter((mood) => mood.id === "energized");
   return {
-    props: { moods: happyMoods },
+    props: { moods: energizedMoods },
   };
 }

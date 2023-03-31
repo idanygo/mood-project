@@ -25,8 +25,8 @@ export default function Home() {
           </div>
           <div className={styles.emojiContainer}>
             <div className={styles.happyStressContainer}>
-              <Link className={styles.happyLink} href={"/happy"}>
-                <div className={styles.happyCircle}>HAPPY</div>
+              <Link className={styles.happyLink} href={"/energized"}>
+                <div className={styles.happyCircle}>ENERGIZED</div>
               </Link>
               <Link className={styles.stressedLink} href={"/stressed"}>
                 <div className={styles.stressedCircle}>STRESSED</div>
@@ -43,23 +43,25 @@ export default function Home() {
           </div>
           <div className={styles.text}>
             <p>
+              Feeling overwhelmed? Dont worry. We got you. Choose a mood that
+              fits your mind and we will give you a list of fitting exercises.
               {/* We know that every day is full of decisions, tell us how you feel
               today and we’ll give you exercises based on your mood. blablabla */}
-              Everyday we're faceed with diffrent decisions, some harder than others.
+              {/* Everyday we're faced with diffrent decisions, some harder than others.
               There are those who say that from the time we rise in the morning until we crasch at night
-              we have said "yes", "no" or "maybe" to hundreds of questions.
+              we have said "yes", "no" or "maybe" to hundreds of questions. */}
             </p>
-            <br />
+            {/* <br />
             <p>
               It's no surprise that you might feel overwhelmed. <strong>But dont worry. We got you. </strong>
-              Just choose a mood thats fits your state of mind right now and we will provied you with some fitting exercises.</p>
+              Just choose a mood thats fits your state of mind right now and we will provied you with some fitting exercises.</p> */}
           </div>
           <div className={styles.arrowWrapper}>
             <Scroll />
           </div>
         </div>
       </main>
-      <Lunga growTime={2} shrinkTime={2} />
+      <Lunga />
     </>
   );
 }

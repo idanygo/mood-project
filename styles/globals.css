@@ -97,6 +97,24 @@ header {
   font-weight: bold;
 }
 
+.footer {
+  background-color: rgba(255, 255, 255, 0.701);
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1f1f1;
+}
+
+.mapWrapper {
+  display: none;
+}
+
+.social {
+  display: flex;
+  gap: 5px;
+}
+
 @media screen and (min-width: 768px) {
   .nav__menuBar {
     display: none;
@@ -125,18 +143,10 @@ header {
   .nav__link.active::before {
     width: 100%;
   }
-}
 
-.footer {
-  background-color: rgba(255, 255, 255, 0.701);
-  display: flex;
-  padding: 10px;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f1f1f1;
-}
-
-.social {
-  display: flex;
-  gap: 5px;
+  .mapWrapper {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
 }

@@ -4,6 +4,16 @@
   padding: 0px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
 body {
   box-sizing: border-box;
 }
@@ -119,7 +129,6 @@ header {
 
 .footer {
   background-color: rgba(255, 255, 255, 0.701);
-  margin-top: 100px;
   display: flex;
   padding: 10px;
   justify-content: space-between;

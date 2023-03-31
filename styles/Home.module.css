@@ -85,19 +85,20 @@
   .wrapper {
     height: 100vh;
   }
+
   .tiredCircle,
   .happyCircle,
   .stressedCircle,
   .allCircle {
     width: 100px;
     height: 100px;
+    font-size: small;
   }
 
   .tiredCircle:hover,
   .happyCircle:hover,
   .stressedCircle:hover,
   .allCircle:hover {
-    scale: 1.1;
-    transition: all 0.5s ease;
+    scale: 1;
   }
 }

@@ -3,40 +3,51 @@ import styles from "@/styles/All.module.css";
 import React, { useState } from "react";
 
 export default function All({ moods }) {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [activeTag, setActiveTag] = useState(null);
 
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
+  const handleDropdownChange = (event) => {
+    setActiveTag(event.target.value);
   };
 
   const filteredExercises = moods.filter((exercise) => {
-    return exercise.title.toLowerCase().includes(searchTerm.toLowerCase());
+    if (activeTag === null) {
+      return true;
+    } else {
+      return exercise.tags.includes(activeTag);
+    }
   });
 
   return (
     <>
-      <main className={styles.main}>
+      <main className={styles.main} key={activeTag}>
         <h1 className={styles.heading}>ALL EXERCISES</h1>
         <div className={styles.descriptionContainer}>
           <h3 className={styles.webDesc}>
             Whether you're feeling stressed, anxious, happy, or simply need a
-            pick-me-up, we have something for everyone.
+            pick-me-up, we have something for everyone. Choose what fits you
+            today.
           </h3>
         </div>
-        <div className={`${styles.searchContainer} searchContainer`}>
-          <label htmlFor="search"></label>
-          <input
-            className={`${styles.searchInput} searchInput`}
-            type="text"
-            id="search"
-            value={searchTerm}
-            onChange={handleSearch}
-            placeholder="Search for exercises"
-          />
+        <div className={styles.tagContainer}>
+          <label htmlFor="tag-select"></label>
+          <select
+            className={styles.select}
+            id="tag-select"
+            value={activeTag || ""}
+            onChange={handleDropdownChange}
+          >
+            <option value="">All</option>
+            <option value="strength">Strength</option>
+            <option value="cardio">Cardio</option>
+            <option value="yoga">Yoga</option>
+            <option value="recovery">Recovery</option>
+            <option value="breathwork">Breathwork</option>
+            <option value="meditation">Meditation</option>
+          </select>
         </div>
         <div className={styles.cardContainer}>
           {filteredExercises?.length &&
-            moods.map((mood) => (
+            filteredExercises.map((mood) => (
               <div className={styles.card} key={mood.id}>
                 <iframe
                   className={styles.cardVideo}

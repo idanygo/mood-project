@@ -7,26 +7,36 @@ function Lunga({ growTime, shrinkTime }) {
   const [text, setText] = useState('');
   const [secondsIn, setSecondsIn] = useState(5);
   const [secondsOut, setSecondsOut] = useState(5);
-  const [intervalId, setIntervalId] = useState(null);
 
   const secInSetter = (event) => {
-    setSecondsIn(event.target.value);
+    const value = event.target.value;
+    if (!isNaN(value) && value !== '') {
+      setSecondsIn(value);
+    } else {
+      setSecondsIn(3); // set default value
+    }
   }
 
   const secOutSetter = (event) => {
-    setSecondsOut(event.target.value)
-  }
-
-  useEffect(() => {
-    if (intervalId) {
-      clearInterval(intervalId);
+    const value = event.target.value;
+    if (!isNaN(value) && value !== '') {
+      setSecondsOut(value);
+    } else {
+      setSecondsOut(3); // set default value
     }
-    const newIntervalId = setInterval(() => {
+  }
+  useEffect(() => {
+    let lastUpdate = Date.now();
+    const interval = setInterval(() => {
+      const now = Date.now();
+      const elapsed = now - lastUpdate;
+      lastUpdate = now;
+
       if (isGrowing) {
         setText('Breath in ...');
         setSize((size) => {
           if (size < 200) {
-            return size + (50 / (secondsIn * 1000 / 10));
+            return size + ((elapsed / 1000) / secondsIn) * 100;
           } else {
             setIsGrowing(false);
             return size;
@@ -35,8 +45,8 @@ function Lunga({ growTime, shrinkTime }) {
       } else {
         setText('Breath out ...')
         setSize((size) => {
-          if (size > 150) {
-            return size - (50 / (secondsOut * 1000 / 10));
+          if (size > 100) {
+            return size - ((elapsed / 1000) / secondsOut) * 100;
           } else {
             setIsGrowing(true);
             return size;
@@ -44,16 +54,12 @@ function Lunga({ growTime, shrinkTime }) {
         });
       }
     }, 10);
-    setIntervalId(newIntervalId);
-    return () => clearInterval(newIntervalId);
-  }, [isGrowing, secondsIn, secondsOut]);
+    return () => clearInterval(interval);
+  }, [isGrowing, growTime, shrinkTime, secondsIn, secondsOut])
 
   return (
     <>
       <div className={styles.lungaWrapper}>
-        <h3>
-          Maybe some deep breaths is all you need?
-        </h3>
         <div className={styles.lungaContainer}>
           <div
             className={styles.lunga}
@@ -63,8 +69,8 @@ function Lunga({ growTime, shrinkTime }) {
         </div>
         <p>{text}</p>
         <form className={styles.breathForm}>
-          <input type="number" placeholder="Breath in" onChange={secInSetter} />
-          <input type="number" placeholder="Breath out" onChange={secOutSetter} />
+          <input type="number" placeholder="Seconds for breath in" onChange={secInSetter} />
+          <input type="number" placeholder="Seconds for breath out" onChange={secOutSetter} />
         </form>
       </div>
     </>

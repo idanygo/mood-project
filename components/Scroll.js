@@ -11,6 +11,11 @@ export default function Scroll() {
     });
   }
 
-  return <button className={styles.scrollButton} type="button" onClick={handleScroll}><i className={styles.arrow}></i></button >;
+  return <div className={styles.scrollWrapper}>
+    <h4>
+      Maybe some deep breaths is all you need?
+    </h4>
+    <button className={styles.scrollButton} type="button" onClick={handleScroll}><i className={styles.arrow}></i></button >
+  </div>;
 
 }

@@ -10,6 +10,12 @@
   cursor: pointer;
 }
 
+.scrollWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .arrow {
   border: solid black;
   border-width: 0 3px 3px 0;

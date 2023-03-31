@@ -25,8 +25,8 @@ export default function Home() {
           </div>
           <div className={styles.emojiContainer}>
             <div className={styles.happyStressContainer}>
-              <Link className={styles.happyLink} href={"/happy"}>
-                <div className={styles.happyCircle}>HAPPY</div>
+              <Link className={styles.happyLink} href={"/energized"}>
+                <div className={styles.happyCircle}>ENERGIZED</div>
               </Link>
               <Link className={styles.stressedLink} href={"/stressed"}>
                 <div className={styles.stressedCircle}>STRESSED</div>
@@ -43,7 +43,8 @@ export default function Home() {
           </div>
           <div className={styles.text}>
             <p>
-              Feeling overwhelmed? Dont worry. We got you. Choose a mood that fits your mind and we will give you a list of fitting exercises.
+              Feeling overwhelmed? Dont worry. We got you. Choose a mood that
+              fits your mind and we will give you a list of fitting exercises.
               {/* We know that every day is full of decisions, tell us how you feel
               today and we’ll give you exercises based on your mood. blablabla */}
               {/* Everyday we're faced with diffrent decisions, some harder than others.

@@ -5,8 +5,8 @@ import { getAllMoods } from "@/utils/Moodobjects";
 export default function Tired({ moods }) {
   const tiredMoods = moods.filter((mood) => mood.id === "tired");
   return (
-    <Layout backgroundColor="#fffff">
-      <main className={styles.main}>
+    <Layout backgroundColor="#faedcd">
+      <main className={styles.man}>
         <h1 className={styles.heading}>TIRED</h1>
         <div className={styles.descriptionContainer}>
           <h3 className={styles.webDesc}>

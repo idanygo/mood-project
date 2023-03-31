@@ -1,7 +1,6 @@
 const moods = [
   {
-    id: "happy",
-    category: "happy",
+    id: "energized",
     title: "30 Minute at Home Strength Workout",
     description:
       "30 Minute at Home Strength Workout This workout is perfect for those who want to build strength without any equipment.",
@@ -9,7 +8,7 @@ const moods = [
     tags: "strength",
   },
   {
-    id: "happy",
+    id: "energized",
     title: "At Home Cardio Workout",
     description:
       "This cardio workout is ideal for anyone who wants to get their heart rate up and burn calories without leaving the house.",
@@ -17,7 +16,7 @@ const moods = [
     tags: "cardio",
   },
   {
-    id: "happy",
+    id: "energized",
     title: "Full Body Yoga Workout",
     description:
       "Full Body Yoga Workout by Yoga with Adriene (30 minutes) This yoga routine is perfect for those who want to stretch, strengthen, and tone their entire body.",
@@ -33,7 +32,7 @@ const moods = [
     tags: "yoga",
   },
   {
-    id: "happy",
+    id: "energized",
     title: "Total Body Pilates Workout",
     description:
       "Total Body Pilates Workout This Pilates workout is designed to tone and sculpt your entire body. The exercises focus on the core, arms, legs, and glutes, and can be done without any equipment.",

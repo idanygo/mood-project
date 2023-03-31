@@ -60,7 +60,6 @@ export default function Home() {
         </div>
       </main>
       <Lunga growTime={2} shrinkTime={2} />
-
     </>
   );
 }

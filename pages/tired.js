@@ -6,8 +6,21 @@ export default function Tired({ moods }) {
   const tiredMoods = moods.filter((mood) => mood.id === "tired");
   return (
     <Layout backgroundColor="#faedcd">
-      <main className={styles.man}>
-        <h1 className={styles.heading}>TIRED</h1>
+      <main className={styles.main}>
+        <h1 className={styles.heading}>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 52 52"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="blue_tired">
+              <circle cx="26" cy="26" r="26" fill="#191D30" />
+            </g>
+          </svg>
+          TIRED
+        </h1>
         <div className={styles.descriptionContainer}>
           <h3 className={styles.webDesc}>
             "Fatigue is the common enemy of us all - so slow down, rest up,

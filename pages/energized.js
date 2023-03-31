@@ -7,7 +7,18 @@ export default function Energized({ moods }) {
   return (
     <Layout backgroundColor="#faedcd">
       <main className={styles.main}>
-        <h1 className={styles.heading}>ENERGIZED</h1>
+        <h1 className={styles.heading}>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 52 52"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle id="green_happy" cx="26" cy="26" r="26" fill="#819A7A" />
+          </svg>
+          ENERGIZED
+        </h1>
         <div className={styles.descriptionContainer}>
           <h3 className={styles.webDesc}>
             "Happiness is not something ready made. It comes from your own

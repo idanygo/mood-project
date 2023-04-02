@@ -10,6 +10,7 @@
   gap: 30px;
 }
 
+/* Fix<r gapen när skärmen krymper såpass mycket att de lägger sig två och två- */
 .happyStressContainer,
 .tiredAllContainer {
   display: flex;
@@ -23,6 +24,7 @@
   text-decoration: none;
 }
 
+/* Styr cirklarnas design */
 .tiredCircle,
 .happyCircle,
 .stressedCircle,
@@ -82,6 +84,7 @@
 }
 
 @media screen and (max-width: 768px) {
+  /* Centrerar bättre i mobil */
   .wrapper {
     height: 100vh;
   }
@@ -95,6 +98,7 @@
     font-size: small;
   }
 
+  /* Stoppar hover-effekten. */
   .tiredCircle:hover,
   .happyCircle:hover,
   .stressedCircle:hover,

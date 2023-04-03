@@ -30,7 +30,7 @@ export default function All({ moods }) {
           >
             <circle cx="26" cy="26" r="26" fill="#F9DFA1" />
           </svg>
-          ALL EXERCISES
+          npm install lru-cache ALL EXERCISES
         </h1>
         <div className={styles.descriptionContainer}>
           <h3 className={styles.webDesc}>

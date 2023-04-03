@@ -45,3 +45,22 @@
     gap: 20px;
   }
 }
+
+/* .input:placeholder-shown {
+  background-color: ivory;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+} */
+
+.input + .emptyspan {
+  position: relative;
+}
+.input + .emptyspan::before {
+  position: relative;
+  right: 20px;
+}
+
+.input:valid + .emptyspan::before {
+  content: "✓";
+  color: green;
+}

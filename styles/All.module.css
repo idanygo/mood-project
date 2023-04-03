@@ -1,6 +1,7 @@
 .main {
   min-height: 100vh;
   margin-bottom: 12%;
+  margin-top: 6%;
 }
 
 .heading {
@@ -9,7 +10,6 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 3rem;
-  margin-top: 3rem;
   font-weight: 400;
 }
 
@@ -91,16 +91,16 @@
 
 .select {
   font-size: 18px;
-  font-weight: 600;
+  background-color: #f5f0e4;
+  height: 40px;
   color: #333;
-  border-radius: 5px;
-  background-color: #cbd1ca;
+  border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  border: none;
+  border: black 1px solid;
 }
 
 .tagContainer {
   display: flex;
   justify-content: center;
-  padding-bottom: 20px;
+  padding-bottom: 5%;
 }

@@ -20,8 +20,8 @@ export default function Home() {
       </Head>
       <main className={styles.mainwrapper}>
         <div className={styles.wrapper}>
-          <div className={styles.headline}>
-            <h1>What’s your mood today?</h1>
+          <div>
+            <h1 className={styles.headline}>What’s your mood today?</h1>
           </div>
           <div className={styles.emojiContainer}>
             <div className={styles.happyStressContainer}>

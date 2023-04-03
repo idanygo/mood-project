@@ -7,8 +7,6 @@ function Lunga({ growTime, shrinkTime }) {
   const [text, setText] = useState("");
   const [secondsIn, setSecondsIn] = useState(5);
   const [secondsOut, setSecondsOut] = useState(5);
-  const [showConfirmation, setshowConfirmation] = useState(false);
-  const [confirmationTimeout, setConfirmationTimeout] = useState(null);
 
   const secInSetter = (event) => {
     const value = event.target.value;
@@ -27,20 +25,6 @@ function Lunga({ growTime, shrinkTime }) {
       setSecondsOut(3); // set default value
     }
   };
-
-  useEffect(() => {
-    if (secondsIn && secondsOut) {
-      setshowConfirmation(true);
-      clearTimeout(confirmationTimeout);
-      setConfirmationTimeout(
-        setTimeout(() => {
-          setshowConfirmation(false);
-        }, 2000)
-      );
-    } else {
-      setshowConfirmation(false);
-    }
-  }, [secondsIn, secondsOut]);
 
   useEffect(() => {
     let lastUpdate = Date.now();
@@ -85,22 +69,28 @@ function Lunga({ growTime, shrinkTime }) {
         </div>
         <p>{text}</p>
         <form className={styles.breathForm}>
-          <input
-            type="number"
-            placeholder="Seconds for breath in"
-            onChange={secInSetter}
-          />
-          <input
-            type="number"
-            placeholder="Seconds for breath out"
-            onChange={secOutSetter}
-          />
-        </form>
-        {showConfirmation && (
-          <div className={styles.confirmation}>
-            <p>Seconds saved, time to breath!</p>
+          <div>
+            <input
+              className={styles.input}
+              type="number"
+              placeholder="Seconds for breath in"
+              onChange={secInSetter}
+              required
+            />{" "}
+            <span className={styles.emptyspan}></span>
           </div>
-        )}
+          <div>
+            <input
+              className={styles.input}
+              type="number"
+              b
+              placeholder="Seconds for breath out"
+              onChange={secOutSetter}
+              required
+            />
+            <span className={styles.emptyspan}></span>
+          </div>
+        </form>
       </div>
     </>
   );

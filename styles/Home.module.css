@@ -10,21 +10,13 @@
   gap: 30px;
 }
 
-/* Fix<r gapen när skärmen krymper såpass mycket att de lägger sig två och två- */
 .happyStressContainer,
 .tiredAllContainer {
   display: flex;
   gap: 30px;
 }
 
-.happyLink,
-.tiredLink,
-.stressedLink,
-.allLink {
-  text-decoration: none;
-}
-
-/* Styr cirklarnas design */
+/* Sets the design for the circles on landing page */
 .tiredCircle,
 .happyCircle,
 .stressedCircle,
@@ -35,7 +27,6 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  text-decoration: none;
   transition: all 0.5s ease;
 }
 
@@ -84,7 +75,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  /* Centrerar bättre i mobil */
   .wrapper {
     height: 100vh;
   }
@@ -95,10 +85,10 @@
   .allCircle {
     width: 100px;
     height: 100px;
-    font-size: small;
+    font-size: 0.85rem;
   }
 
-  /* Stoppar hover-effekten. */
+  /* Removes the hover effect for mobile */
   .tiredCircle:hover,
   .happyCircle:hover,
   .stressedCircle:hover,

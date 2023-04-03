@@ -18,6 +18,25 @@ const menuList = [
 ];
 
 const Navbar = () => {
+  //Change nav color when scrolling
+  const [color, setColor] = useState(false);
+
+  const changeColor = () => {
+    if (window.scrollY >= 115) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeColor);
+
+    return () => {
+      window.removeEventListener("scroll", changeColor);
+    };
+  }, []);
+
   const [navActive, setNavActive] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   let menuRef = useRef();
@@ -34,11 +53,11 @@ const Navbar = () => {
     return () => {
       document.removeEventListener("mousedown", handler);
     };
-  });
+  }, []);
 
   return (
     <header>
-      <nav className="nav" ref={menuRef}>
+      <nav className={color ? "nav navBg" : "nav"} ref={menuRef}>
         <Link href={"/"} onClick={() => setActiveIndex(0)}>
           <h1 className="logo">MoodMate</h1>
         </Link>

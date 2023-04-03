@@ -10,7 +10,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type='number'] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -47,8 +47,13 @@ header {
   padding: 7px;
   justify-content: space-between;
   align-items: center;
-  /* background-color: white; */
-  background-color: #f1f1f1; /*färg på själva nav baren*/
+  background-color: rgba(254, 252, 248);
+  /*sets the color on the nav for mobile*/
+  backdrop-filter: blur(10px);
+}
+
+.navBg {
+  background-color: rgba(254, 252, 248, 0.85);
 }
 
 .nav__menuBar {
@@ -73,9 +78,14 @@ header {
   width: 288px;
   row-gap: 24px;
   padding: 24px 16px;
-  right: -400px; /*det som gör att den "göms"*/
+  right: -400px; /*Hides the nav when it's closed on mobile*/
   min-height: calc(100vh - 60px);
-  background-color: #f1f1f1; /*background color på rullgardin*/
+  background-color: rgba(
+    254,
+    252,
+    248,
+    255
+  ); /*background color på rullgardin för mobile*/
   transition: all 0.3s;
 }
 
@@ -120,16 +130,33 @@ header {
     display: none;
   }
 
+  .nav {
+    background-color: transparent; /*Makes the nav transparent for desktop*/
+  }
+
+  .navBg {
+    background-color: rgb(
+      255,
+      255,
+      255,
+      0.85
+    ); /*sets the color for the nav when scrolling for desktop*/
+    backdrop-filter: blur(10px);
+
+    transition: ease-out 0.3s;
+  }
+
   .nav__menuList {
     position: unset;
     min-height: fit-content;
     width: fit-content;
     flex-direction: row;
     column-gap: 24px;
+    background-color: transparent;
     align-items: center;
   }
   .nav__link::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 0%;
     bottom: -16px;

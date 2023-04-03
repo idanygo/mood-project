@@ -48,9 +48,14 @@ export default function Energized({ moods }) {
 }
 
 export async function getStaticProps() {
-  const moods = getAllMoods();
-  const energizedMoods = moods.filter((mood) => mood.id === "energized");
-  return {
-    props: { moods: energizedMoods },
-  };
+  try {
+    const moods = getAllMoods();
+    const energizedMoods = moods.filter((mood) => mood.id === "energized");
+    return {
+      props: { moods: energizedMoods },
+    };
+  } catch (error) {
+    console.log(error);
+  }
+  e;
 }

@@ -34,9 +34,12 @@
 }
 
 .showSeconds {
+  display: flex;
+  gap: 5px;
   font-weight: 300;
   line-height: 1.5;
 }
+
 
 .inputs {
   justify-content: center;
@@ -87,7 +90,7 @@
   color: white;
 }
 
-.radioInput[type="radio"] {
+.radioInput[type='radio'] {
   display: none;
 }
 
@@ -117,7 +120,7 @@
 }
 
 .input:valid + .emptyspan::before {
-  content: "✓";
+  content: '✓';
   color: green;
 }
 

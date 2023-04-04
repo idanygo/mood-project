@@ -1,19 +1,38 @@
 import { use, useEffect, useState } from "react";
 import styles from "@/styles/Lunga.module.css";
 
+const techniques = [
+  {
+    name: "Soothing breath",
+    secondsIn: 4,
+    secondsOut: 8,
+  },
+  {
+    name: "Balanced breath",
+    secondsIn: 4,
+    secondsOut: 4,
+  },
+  {
+    name: "Stimulating breath",
+    secondsIn: 8,
+    secondsOut: 4,
+  },
+];
+
 function Lunga({ growTime, shrinkTime }) {
   const [size, setSize] = useState(100);
   const [isGrowing, setIsGrowing] = useState(true);
   const [text, setText] = useState("");
   const [secondsIn, setSecondsIn] = useState(5);
   const [secondsOut, setSecondsOut] = useState(5);
+  const [selectedTechnique, setSelectedTechnique] = useState(techniques[0]);
 
   const secInSetter = (event) => {
     const value = event.target.value;
     if (!isNaN(value) && value !== "") {
       setSecondsIn(value);
     } else {
-      setSecondsIn(3); // set default value
+      setSecondsIn(3); // sets the default value for inhale
     }
   };
 
@@ -22,7 +41,7 @@ function Lunga({ growTime, shrinkTime }) {
     if (!isNaN(value) && value !== "") {
       setSecondsOut(value);
     } else {
-      setSecondsOut(3); // set default value
+      setSecondsOut(3); // sets the default value for exhale
     }
   };
 
@@ -69,25 +88,50 @@ function Lunga({ growTime, shrinkTime }) {
         </div>
         <p>{text}</p>
         <form className={styles.breathForm}>
-          <div>
-            <input
-              className={styles.input}
-              type="number"
-              placeholder="Seconds for breath in"
-              onChange={secInSetter}
-              required
-            />{" "}
-            <span className={styles.emptyspan}></span>
+          <div className={styles.inputs}>
+            <div>
+              <input
+                className={styles.input}
+                type="number"
+                placeholder="Seconds for breath in"
+                onChange={secInSetter}
+                required
+              />
+              <span className={styles.emptyspan}></span>
+            </div>
+            <div>
+              <input
+                className={styles.input}
+                type="number"
+                b
+                placeholder="Seconds for breath out"
+                onChange={secOutSetter}
+                required
+              />
+              <span className={styles.emptyspan}></span>
+            </div>
           </div>
-          <div>
-            <input
-              className={styles.input}
-              type="number"
-              placeholder="Seconds for breath out"
-              onChange={secOutSetter}
-              required
-            />
-            <span className={styles.emptyspan}></span>
+          <div className={styles.breathBtnContainer}>
+            <div className={styles.breathBtn}>
+              {techniques.map((t) => (
+                <div key={t.name}>
+                  <label className={styles.radioLabel}>
+                    <input
+                      className={styles.radioInput}
+                      type="radio"
+                      name="technique"
+                      value={t.name}
+                      onChange={() => {
+                        setSelectedTechnique(t);
+                        setSecondsIn(t.secondsIn);
+                        setSecondsOut(t.secondsOut);
+                      }}
+                    />
+                    {t.name}
+                  </label>
+                </div>
+              ))}
+            </div>
           </div>
         </form>
       </div>

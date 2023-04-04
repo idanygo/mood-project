@@ -19,12 +19,13 @@ const techniques = [
   },
 ];
 
-function Lunga({ growTime, shrinkTime }) {
+function Lunga() {
   const [size, setSize] = useState(100);
   const [isGrowing, setIsGrowing] = useState(true);
   const [text, setText] = useState("");
-  const [secondsIn, setSecondsIn] = useState(5);
-  const [secondsOut, setSecondsOut] = useState(5);
+  const [secondsIn, setSecondsIn] = useState(3);
+  const [secondsOut, setSecondsOut] = useState(3);
+  const [secondsHold, setSecondsHold] = useState(0);
   const [selectedTechnique, setSelectedTechnique] = useState(techniques[0]);
 
   const secInSetter = (event) => {
@@ -45,8 +46,18 @@ function Lunga({ growTime, shrinkTime }) {
     }
   };
 
+  const holdSetter = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && value !== "") {
+      setSecondsHold(value);
+    } else {
+      setSecondsHold(3); // sets the default value for exhale
+    }
+  };
+
   useEffect(() => {
     let lastUpdate = Date.now();
+    let holdTimeElapsed = 0;
     const interval = setInterval(() => {
       const now = Date.now();
       const elapsed = now - lastUpdate;
@@ -62,6 +73,9 @@ function Lunga({ growTime, shrinkTime }) {
             return size;
           }
         });
+      } else if (secondsHold && holdTimeElapsed < secondsHold * 1000) {
+        setText("Hold ...");
+        holdTimeElapsed += elapsed;
       } else {
         setText("Breath out ...");
         setSize((size) => {
@@ -69,13 +83,14 @@ function Lunga({ growTime, shrinkTime }) {
             return size - (elapsed / 1000 / secondsOut) * 100;
           } else {
             setIsGrowing(true);
+            holdTimeElapsed = 0; // reset hold time
             return size;
           }
         });
       }
     }, 10);
     return () => clearInterval(interval);
-  }, [isGrowing, growTime, shrinkTime, secondsIn, secondsOut]);
+  }, [isGrowing, secondsIn, secondsOut, secondsHold]);
 
   return (
     <>
@@ -86,10 +101,13 @@ function Lunga({ growTime, shrinkTime }) {
             style={{ width: size, height: size }}
           ></div>
         </div>
-        <p>{text}</p>
+        <h4>{text}</h4>
         <p
           className={styles.showSeconds}
-        >{`Inhale: ${secondsIn} seconds, Exhale: ${secondsOut} seconds`}</p>
+        >{<strong>{`Inhale:`}</strong>} {` ${secondsIn} seconds.`}
+          {<strong>{`Hold:`}</strong>} {` ${secondsHold} seconds`}
+          {<strong>{`Exhale: `}</strong>} {`${secondsOut} seconds`}
+        </p>
         <form className={styles.breathForm}>
           <div className={styles.inputs}>
             <div>
@@ -98,6 +116,16 @@ function Lunga({ growTime, shrinkTime }) {
                 type="number"
                 placeholder="Seconds for breath in"
                 onChange={secInSetter}
+                required
+              />
+              <span className={styles.emptyspan}></span>
+            </div>
+            <div>
+              <input
+                className={styles.input}
+                type="number"
+                placeholder="Seconds for hold"
+                onChange={holdSetter}
                 required
               />
               <span className={styles.emptyspan}></span>

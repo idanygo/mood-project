@@ -1,12 +1,7 @@
 import { getAllMoods } from "@/utils/Moodobjects";
 import styles from "@/styles/All.module.css";
 import React, { useState } from "react";
-import LRUCache from "lru-cache";
 
-const cache = new LRUCache({
-  max: 100,
-  maxAge: 1000 * 60 * 60,
-});
 export default function All({ moods }) {
   const [activeTag, setActiveTag] = useState(null);
 
@@ -85,14 +80,7 @@ export default function All({ moods }) {
 }
 
 export async function getStaticProps() {
-  const cacheKey = "moods";
-  const cachedData = cache.get(cacheKey);
-  if (cachedData) {
-    return { props: { moods: cachedData } };
-  }
-
   const moods = getAllMoods();
-  cache.set(cacheKey, moods); // cache the data
   return {
     props: { moods },
   };

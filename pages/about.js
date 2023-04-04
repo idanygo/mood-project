@@ -84,7 +84,7 @@ export default function About() {
             <Image
               className={styles.cardImg}
               src="/Ida.png"
-              alt="A pic of Ida"
+              alt="A pic of the students, Ida"
               width={200}
               height={200}
             />
@@ -126,7 +126,7 @@ export default function About() {
             <Image
               className={styles.cardImg}
               src="/Anton.png"
-              alt="A pic of Anton"
+              alt="A pic of the students, Anton"
               width={200}
               height={200}
             />

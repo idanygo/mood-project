@@ -83,7 +83,6 @@ function Lunga({ growTime, shrinkTime }) {
             <input
               className={styles.input}
               type="number"
-              b
               placeholder="Seconds for breath out"
               onChange={secOutSetter}
               required

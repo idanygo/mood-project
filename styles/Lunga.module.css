@@ -5,12 +5,14 @@
 }
 
 .lungaWrapper {
-  height: calc(100vh - 83px);
+  height: calc(80vh - 83px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   padding: 20px;
+  margin-top: 6%;
+  margin-bottom: 0%;
   text-align: center;
 }
 
@@ -19,7 +21,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 250px;
+  height: 400px;
+}
+
+.breathWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 12%;
+}
+
+.showSeconds {
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 .inputs {
@@ -38,17 +54,37 @@
   user-select: none;
 }
 
+.breathBtnContainer p {
+  margin-bottom: 6%;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
 .radioLabel {
+  all: unset;
+  text-transform: uppercase;
   display: flex;
   justify-content: center;
-  border: black 1px solid;
   border-radius: 20px;
+  background: linear-gradient(rgb(250, 237, 205), rgb(250, 237, 205))
+      padding-box padding-box,
+    linear-gradient(-225deg, rgb(117, 240, 240), rgb(117, 117, 240)) border-box
+      border-box;
+  border: 1px solid #181d31;
   font-size: 15px;
   font-weight: 400;
   padding: 10px 5px 10px 5px;
   cursor: pointer;
   width: 330px;
-  user-select: none;
+}
+
+.radioLabel:active {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
+      padding-box padding-box,
+    linear-gradient(-225deg, rgb(117, 240, 240), rgb(117, 117, 240)) border-box
+      border-box;
+  border: 1px solid transparent;
+  color: white;
 }
 
 .radioInput[type="radio"] {
@@ -89,6 +125,10 @@
   .inputs {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .radioLabel {
+    width: 160px;
   }
 
   .breathForm {

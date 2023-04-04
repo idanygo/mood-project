@@ -87,6 +87,9 @@ function Lunga({ growTime, shrinkTime }) {
           ></div>
         </div>
         <p>{text}</p>
+        <p
+          className={styles.showSeconds}
+        >{`Inhale: ${secondsIn} seconds, Exhale: ${secondsOut} seconds`}</p>
         <form className={styles.breathForm}>
           <div className={styles.inputs}>
             <div>
@@ -103,7 +106,6 @@ function Lunga({ growTime, shrinkTime }) {
               <input
                 className={styles.input}
                 type="number"
-                b
                 placeholder="Seconds for breath out"
                 onChange={secOutSetter}
                 required
@@ -111,7 +113,16 @@ function Lunga({ growTime, shrinkTime }) {
               <span className={styles.emptyspan}></span>
             </div>
           </div>
+        </form>
+      </div>
+      <div className={styles.breathWrapper}>
+        <form className={styles.breathForm}>
           <div className={styles.breathBtnContainer}>
+            <p>
+              <b>Unsure of how many seconds to fill out?</b>
+              <br /> No problem. Select one of our pre-set breathworks below to
+              get started.
+            </p>
             <div className={styles.breathBtn}>
               {techniques.map((t) => (
                 <div key={t.name}>

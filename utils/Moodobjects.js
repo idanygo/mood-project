@@ -1,3 +1,5 @@
+// Här har vi en array som innehåller flera objekt, det är vårt api som vi har skapat och använder oss utav
+
 const moods = [
   {
     id: "energized",
@@ -120,6 +122,8 @@ const moods = [
     tags: "meditation",
   },
 ];
+
+// Här har vi en funktion som returnar vår array med objekt (ovanför) och som innehåller flertal propeties
 
 export const getAllMoods = () => {
   return moods.map((mood) => ({

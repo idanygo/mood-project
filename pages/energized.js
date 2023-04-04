@@ -2,6 +2,8 @@ import styles from "@/styles/All.module.css";
 import Layout from "@/components/Layout";
 import { getAllMoods } from "@/utils/Moodobjects";
 
+// Här skapar vi en array som heter Energimoods, genom att filtrera vår array moods, endast om objektes id är lika med "Energized"
+
 export default function Energized({ moods }) {
   const energizedMoods = moods.filter((mood) => mood.id === "energized");
   return (
@@ -47,6 +49,7 @@ export default function Energized({ moods }) {
   );
 }
 
+// Här retunerar funktionen ett objekt med en props--varaibal som heter moods, som innehåller den filtrerade arran energizedmoods.
 export async function getStaticProps() {
   try {
     const moods = getAllMoods();

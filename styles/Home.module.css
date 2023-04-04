@@ -1,7 +1,9 @@
 .text p {
   line-height: 1.5rem;
 }
-
+.text {
+  margin-bottom: 12%;
+}
 .emojiContainer {
   display: flex;
   flex-wrap: wrap;
@@ -27,6 +29,7 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  text-decoration: none;
   transition: all 0.5s ease;
 }
 
@@ -77,6 +80,10 @@
 @media screen and (max-width: 768px) {
   .wrapper {
     height: 100vh;
+  }
+
+  .text {
+    margin-bottom: 0%;
   }
 
   .tiredCircle,

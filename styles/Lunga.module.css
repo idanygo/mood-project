@@ -3,9 +3,6 @@
   background-color: black;
   transition: width ease-in-out, height ease-in-out;
 }
-.lunga:hover {
-  cursor: pointer;
-}
 
 .lungaWrapper {
   height: calc(100vh - 83px);
@@ -16,6 +13,7 @@
   padding: 20px;
   text-align: center;
 }
+
 .lungaContainer {
   display: flex;
   flex-direction: column;
@@ -24,13 +22,51 @@
   height: 250px;
 }
 
+.inputs {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-bottom: 12%;
+}
+
+.breathBtn {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+}
+
+.radioLabel {
+  display: flex;
+  justify-content: center;
+  border: black 1px solid;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 10px 5px 10px 5px;
+  cursor: pointer;
+  width: 330px;
+  user-select: none;
+}
+
+.radioInput[type="radio"] {
+  display: none;
+}
+
+.radioLabel:hover {
+  background-color: #f7f7f7;
+}
+
 .breathForm {
   display: flex;
+  flex-direction: column;
   gap: 20px;
   margin-top: 20px;
 }
 
-.breathForm input {
+.input {
   background-color: #faedcd;
   height: 30px;
   padding: 10px;
@@ -38,29 +74,26 @@
   border-radius: 10px;
 }
 
-@media screen and (max-width: 768px) {
-  .breathForm {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
-/* .input:placeholder-shown {
-  background-color: ivory;
-  border: 2px solid darkorange;
-  border-radius: 5px;
-} */
-
-.input + .emptyspan {
-  position: relative;
-}
+/* sets the check after a value is places in the input */
 .input + .emptyspan::before {
   position: relative;
-  right: 20px;
+  right: 30px;
 }
 
 .input:valid + .emptyspan::before {
   content: "✓";
   color: green;
+}
+
+@media screen and (max-width: 768px) {
+  .inputs {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .breathForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }

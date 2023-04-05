@@ -28,6 +28,8 @@ function Lunga() {
   // const [secondsHold, setSecondsHold] = useState(0);
   const [selectedTechnique, setSelectedTechnique] = useState(techniques[0]);
 
+
+  // This function handles the user input of the field for breathing in. It makes it so the lung wont react on charachters or empy strings.
   const secInSetter = (event) => {
     const value = event.target.value;
     if (!isNaN(value) && value !== "") {
@@ -37,6 +39,7 @@ function Lunga() {
     }
   };
 
+  // This function handles the user input of the field for breathing out. It makes it so the lung wont react on charachters or empy strings.
   const secOutSetter = (event) => {
     const value = event.target.value;
     if (!isNaN(value) && value !== "") {
@@ -55,9 +58,13 @@ function Lunga() {
       }
     }; */
 
+
+  // The conditional statement in the UseEffect checks if the isGrowing-state is either true or false. If its true the circle grows every 10 miliseconds. We use the seconds we got from the user to do an increase on the size every 10 miliseconds. When the size has reached 200 the isGrowing is set to false.   
+
   useEffect(() => {
     let lastUpdate = Date.now();
-    let holdTimeElapsed = 0;
+    console.log(lastUpdate);
+    /* let holdTimeElapsed = 0; */
     const interval = setInterval(() => {
       const now = Date.now();
       const elapsed = now - lastUpdate;
@@ -83,7 +90,7 @@ function Lunga() {
             return size - (elapsed / 1000 / secondsOut) * 100;
           } else {
             setIsGrowing(true);
-            holdTimeElapsed = 0; // reset hold time
+            /*  holdTimeElapsed = 0; // reset hold time */
             return size;
           }
         });

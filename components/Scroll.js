@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "@/styles/Scroll.module.css";
+import Image from "next/image";
 
 export default function Scroll() {
   function handleScroll() {
@@ -16,13 +17,7 @@ export default function Scroll() {
   return (
     <div className={styles.scrollWrapper}>
       <h4>Maybe some deep breaths is all you need?</h4>
-      <button
-        className={styles.scrollButton}
-        type="button"
-        onClick={handleScroll}
-      >
-        <i className={styles.arrow}></i>
-      </button>
+      <Image className={styles.scrollArrow} src="/icons/arrow-down.svg" width={25} height={25} onClick={handleScroll} role="button" />
     </div>
   );
 }

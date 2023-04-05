@@ -36,8 +36,8 @@ export default function Home() {
               <Link className={styles.tiredLink} href={"/tired"}>
                 <div className={styles.tiredCircle}>TIRED</div>
               </Link>
-              <Link className={styles.allLink} href={"/all"}>
-                <div className={styles.allCircle}>ALL</div>
+              <Link className={styles.allLink} href={"/mixed"}>
+                <div className={styles.allCircle}>MIXED</div>
               </Link>
             </div>
           </div>

@@ -1,8 +1,8 @@
-import styles from "@/styles/All.module.css";
+import styles from "@/styles/AllMoods.module.css";
 import Layout from "@/components/Layout";
 import { getAllMoods } from "@/utils/Moodobjects";
 
-// Här skapar vi en array som heter Tiredmoods, genom att filtrera vår array moods, endast om objektes id är lika med "Tired"
+//Only the exercises where the id equals tired shows.
 export default function Tired({ moods }) {
   const tiredMoods = moods.filter((mood) => mood.id === "tired");
   return (

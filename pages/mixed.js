@@ -1,17 +1,16 @@
 import { getAllMoods } from "@/utils/Moodobjects";
-import styles from "@/styles/All.module.css";
+import styles from "@/styles/AllMoods.module.css";
 import React, { useState } from "react";
 
-// En funktion som heter All, som tar in ett argument Moods. I all funktionen så skapar vi ett nytt state activeTag.
 export default function All({ moods }) {
   const [activeTag, setActiveTag] = useState(null);
 
-  // En funktion som hanterar använderens val, när användaren väljer en tagg, så uppdateras activeTag till användarens värde.
+  // When the user chooses a exercise the activeTag updates to the chosen value and
   const handleDropdownChange = (event) => {
     setActiveTag(event.target.value);
   };
 
-  // Vi filtrerar vår moodarray för att kunna scanna igenom de objekt som matchar med activetag. Om activetag är null så returnerar funktionen true för alla objekt, annars true för endast de som användaren valt.
+  // Only the exercises in the category which the user has chosen shows. If the activeTag is null, all exercises shows.
   const filteredExercises = moods.filter((exercise) => {
     if (activeTag === null) {
       return true;
@@ -61,7 +60,7 @@ export default function All({ moods }) {
         </div>
         <div className={styles.cardContainer}>
           {
-            // Här hämtar vi infon för varje övning som skickas till kompomenten som en prop, listan filtreras baserat på activtag som användaren väljer, detta görs med filtredexcerices som skapar en ny array genom att filtrera moods (som ovan) och därefter visa listan med hjälp av map.
+            // The info for each exercise gets sent to the All function as a prop called moods. The filtered list renders based on the users choice.
             filteredExercises?.length &&
               filteredExercises.map((mood) => (
                 <div className={styles.card} key={mood.id}>
@@ -85,7 +84,7 @@ export default function All({ moods }) {
   );
 }
 
-// getStaticProps körs vid bygg och inte varje antrop, det innebär att sidan kommer ladda snabbare för att datan redan har hämtas. Det är en metod som används i nextjs för att kunna preppa data som ska användas på en sida, här hämtar vi data från getallmoods och sedan returnerar vi datan fast i form av ett propsobjekt {moods}, objektet skickas sen vidare till sidan för att visas, och kan sen återanvändas.
+// getStaticProps preps the data which is used on the site, which means the site doesn't have to re-render each time a user visits it. The data is fetched from getAllMoods and is returned as a props object {moods}.
 export async function getStaticProps() {
   const moods = getAllMoods();
   return {

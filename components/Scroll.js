@@ -3,6 +3,7 @@ import styles from "@/styles/Scroll.module.css";
 
 export default function Scroll() {
   function handleScroll() {
+    // when clicking the arrowscrolls down to 0.9 of the window
     const halfViewportHeight = window.innerHeight / 0.9;
     const nextPagePosition = window.scrollY + halfViewportHeight;
     window.scroll({

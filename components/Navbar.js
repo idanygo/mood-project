@@ -13,12 +13,12 @@ const menuList = [
   },
   {
     text: "ALL EXERCISES ",
-    href: "/all",
+    href: "/mixed",
   },
 ];
 
 const Navbar = () => {
-  //Change nav color when scrolling
+  //Changes nav color when scrolling below 115px
   const [color, setColor] = useState(false);
 
   const changeColor = () => {
@@ -39,8 +39,11 @@ const Navbar = () => {
 
   const [navActive, setNavActive] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  //IDA LÄGG KOMMENTAR OM USEREF
   let menuRef = useRef();
 
+  // Closes the menu when clicking outside of it on mobile
   useEffect(() => {
     let handler = (e) => {
       if (!menuRef.current.contains(e.target)) {
@@ -48,10 +51,10 @@ const Navbar = () => {
       }
     };
 
-    document.addEventListener("mousedown", handler);
+    window.addEventListener("mousedown", handler);
 
     return () => {
-      document.removeEventListener("mousedown", handler);
+      window.removeEventListener("mousedown", handler);
     };
   }, []);
 

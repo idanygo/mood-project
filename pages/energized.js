@@ -1,10 +1,9 @@
-import styles from "@/styles/All.module.css";
+import styles from "@/styles/AllMoods.module.css";
 import Layout from "@/components/Layout";
 import { getAllMoods } from "@/utils/Moodobjects";
 
-// Här skapar vi en array som heter Energimoods, genom att filtrera vår array moods, endast om objektes id är lika med "Energized"
-
 export default function Energized({ moods }) {
+  //Only the exercises where the id equals energized shows.
   const energizedMoods = moods.filter((mood) => mood.id === "energized");
   return (
     <Layout backgroundColor="#faedcd">
@@ -49,7 +48,7 @@ export default function Energized({ moods }) {
   );
 }
 
-// Här retunerar funktionen ett objekt med en props--varaibal som heter moods, som innehåller den filtrerade arran energizedmoods.
+// // getStaticProps preps the data which is used on the site, which means the site doesn't have to re-render each time a user visits it. The data is fetched from getAllMoods and is returned as a props object {moods: energizedMoods}.
 export async function getStaticProps() {
   try {
     const moods = getAllMoods();

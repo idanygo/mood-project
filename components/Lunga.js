@@ -25,7 +25,7 @@ function Lunga() {
   const [text, setText] = useState("");
   const [secondsIn, setSecondsIn] = useState(3);
   const [secondsOut, setSecondsOut] = useState(3);
-  const [secondsHold, setSecondsHold] = useState(0);
+  // const [secondsHold, setSecondsHold] = useState(0);
   const [selectedTechnique, setSelectedTechnique] = useState(techniques[0]);
 
   const secInSetter = (event) => {
@@ -46,14 +46,14 @@ function Lunga() {
     }
   };
 
-  const holdSetter = (event) => {
-    const value = event.target.value;
-    if (!isNaN(value) && value !== "") {
-      setSecondsHold(value);
-    } else {
-      setSecondsHold(3); // sets the default value for exhale
-    }
-  };
+  /*   const holdSetter = (event) => {
+      const value = event.target.value;
+      if (!isNaN(value) && value !== "") {
+        setSecondsHold(value);
+      } else {
+        setSecondsHold(3); // sets the default value for exhale
+      }
+    }; */
 
   useEffect(() => {
     let lastUpdate = Date.now();
@@ -73,10 +73,10 @@ function Lunga() {
             return size;
           }
         });
-      } else if (secondsHold && holdTimeElapsed < secondsHold * 1000) {
+      }/*  else if (secondsHold && holdTimeElapsed < secondsHold * 1000) {
         setText("Hold ...");
         holdTimeElapsed += elapsed;
-      } else {
+      } */ else {
         setText("Breath out ...");
         setSize((size) => {
           if (size > 100) {
@@ -90,7 +90,7 @@ function Lunga() {
       }
     }, 10);
     return () => clearInterval(interval);
-  }, [isGrowing, secondsIn, secondsOut, secondsHold]);
+  }, [isGrowing, secondsIn, secondsOut, /* secondsHold */]);
 
   return (
     <>
@@ -105,7 +105,7 @@ function Lunga() {
         <p
           className={styles.showSeconds}
         >{<strong>{`Inhale:`}</strong>} {` ${secondsIn} seconds.`}
-          {<strong>{`Hold:`}</strong>} {` ${secondsHold} seconds`}
+          {/* {<strong>{`Hold:`}</strong>} {` ${secondsHold} seconds`} */}
           {<strong>{`Exhale: `}</strong>} {`${secondsOut} seconds`}
         </p>
         <form className={styles.breathForm}>
@@ -120,7 +120,7 @@ function Lunga() {
               />
               <span className={styles.emptyspan}></span>
             </div>
-            <div>
+            {/*  <div>
               <input
                 className={styles.input}
                 type="number"
@@ -129,7 +129,7 @@ function Lunga() {
                 required
               />
               <span className={styles.emptyspan}></span>
-            </div>
+            </div> */}
             <div>
               <input
                 className={styles.input}

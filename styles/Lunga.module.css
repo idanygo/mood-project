@@ -8,7 +8,7 @@
   height: calc(80vh - 83px);
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   padding: 20px;
   margin-top: 6%;
@@ -98,6 +98,7 @@
 .breathForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
   margin-top: 20px;
 }

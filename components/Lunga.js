@@ -63,7 +63,6 @@ function Lunga() {
     let interval;
     if (secondsIn > 0 && secondsOut > 0) {
       let lastUpdate = Date.now();
-      console.log(lastUpdate);
       /* let holdTimeElapsed = 0; */
       interval = setInterval(() => {
         const now = Date.now();

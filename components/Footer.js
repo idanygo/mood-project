@@ -14,12 +14,13 @@ export default function Footer() {
           <p>Solnavägen 3h, 113 63 Stockholm</p>
         </div>
         <div className="social">
-          <Link href={"https://github.com/idanygo/mood-project"}>
+          <Link
+            target="_blank"
+            href={"https://github.com/idanygo/mood-project"}
+          >
             {" "}
             <Image alt="" src="/github-mark.png" width={35} height={35} />{" "}
           </Link>
-
-          <Image alt="" src="/fb-logo-rb.png" width={35} height={35} />
         </div>
       </div>
     </>

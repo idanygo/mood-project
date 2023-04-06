@@ -28,11 +28,10 @@ function Lunga() {
   // const [secondsHold, setSecondsHold] = useState(0);
   const [selectedTechnique, setSelectedTechnique] = useState(techniques[0]);
 
-
   // This function handles the user input of the field for breathing in. It makes it so the lung wont react on charachters or empy strings.
   const secInSetter = (event) => {
     const value = event.target.value;
-    if (!isNaN(value) && value !== "") {
+    if (!isNaN(value)) {
       setSecondsIn(value);
     } else {
       setSecondsIn(3); // sets the default value for inhale
@@ -42,7 +41,7 @@ function Lunga() {
   // This function handles the user input of the field for breathing out. It makes it so the lung wont react on charachters or empy strings.
   const secOutSetter = (event) => {
     const value = event.target.value;
-    if (!isNaN(value) && value !== "") {
+    if (!isNaN(value)) {
       setSecondsOut(value);
     } else {
       setSecondsOut(3); // sets the default value for exhale
@@ -58,46 +57,48 @@ function Lunga() {
       }
     }; */
 
-
-  // The conditional statement in the UseEffect checks if the isGrowing-state is either true or false. If its true the circle grows every 10 miliseconds. We use the seconds we got from the user to do an increase on the size every 10 miliseconds. When the size has reached 200 the isGrowing is set to false.   
+  // The conditional statement in the UseEffect checks if the isGrowing-state is either true or false. If its true the circle grows every 10 miliseconds. We use the seconds we got from the user to do an increase on the size every 10 miliseconds. When the size has reached 200 the isGrowing is set to false.
 
   useEffect(() => {
-    let lastUpdate = Date.now();
-    console.log(lastUpdate);
-    /* let holdTimeElapsed = 0; */
-    const interval = setInterval(() => {
-      const now = Date.now();
-      const elapsed = now - lastUpdate;
-      lastUpdate = now;
+    let interval;
+    if (secondsIn > 0 && secondsOut > 0) {
+      let lastUpdate = Date.now();
+      console.log(lastUpdate);
+      /* let holdTimeElapsed = 0; */
+      interval = setInterval(() => {
+        const now = Date.now();
+        const elapsed = now - lastUpdate;
+        lastUpdate = now;
 
-      if (isGrowing) {
-        setText("Breath in ...");
-        setSize((size) => {
-          if (size < 200) {
-            return size + (elapsed / 1000 / secondsIn) * 100;
-          } else {
-            setIsGrowing(false);
-            return size;
-          }
-        });
-      }/*  else if (secondsHold && holdTimeElapsed < secondsHold * 1000) {
+        if (isGrowing) {
+          setText("Breath in ...");
+          setSize((size) => {
+            if (size < 200) {
+              return size + (elapsed / 1000 / secondsIn) * 100;
+            } else {
+              setIsGrowing(false);
+              return size;
+            }
+          });
+        } /*  else if (secondsHold && holdTimeElapsed < secondsHold * 1000) {
         setText("Hold ...");
         holdTimeElapsed += elapsed;
       } */ else {
-        setText("Breath out ...");
-        setSize((size) => {
-          if (size > 100) {
-            return size - (elapsed / 1000 / secondsOut) * 100;
-          } else {
-            setIsGrowing(true);
-            /*  holdTimeElapsed = 0; // reset hold time */
-            return size;
-          }
-        });
-      }
-    }, 10);
+          setText("Breath out ...");
+          setSize((size) => {
+            if (size > 100) {
+              return size - (elapsed / 1000 / secondsOut) * 100;
+            } else {
+              setIsGrowing(true);
+              /*  holdTimeElapsed = 0; // reset hold time */
+              return size;
+            }
+          });
+        }
+      }, 10);
+    }
     return () => clearInterval(interval);
-  }, [isGrowing, secondsIn, secondsOut, /* secondsHold */]);
+  }, [isGrowing, secondsIn, secondsOut /* secondsHold */]);
 
   return (
     <>
@@ -109,9 +110,8 @@ function Lunga() {
           ></div>
         </div>
         <h4>{text}</h4>
-        <p
-          className={styles.showSeconds}
-        >{<strong>{`Inhale:`}</strong>} {` ${secondsIn} seconds.`}
+        <p className={styles.showSeconds}>
+          {<strong>{`Inhale:`}</strong>} {` ${secondsIn} seconds.`}
           {/* {<strong>{`Hold:`}</strong>} {` ${secondsHold} seconds`} */}
           {<strong>{`Exhale: `}</strong>} {`${secondsOut} seconds`}
         </p>
@@ -124,6 +124,7 @@ function Lunga() {
                 placeholder="Seconds for breath in"
                 onChange={secInSetter}
                 required
+                value={secondsIn}
               />
               <span className={styles.emptyspan}></span>
             </div>
@@ -144,6 +145,7 @@ function Lunga() {
                 placeholder="Seconds for breath out"
                 onChange={secOutSetter}
                 required
+                value={secondsOut}
               />
               <span className={styles.emptyspan}></span>
             </div>
@@ -161,19 +163,19 @@ function Lunga() {
             <div className={styles.breathBtn}>
               {techniques.map((t) => (
                 <div key={t.name}>
-                  <label className={styles.radioLabel}>
-                    <input
-                      className={styles.radioInput}
-                      type="radio"
+                  <label className={styles.buttonLabel}>
+                    <button
+                      className={styles.buttonTechnique}
+                      type="button"
                       name="technique"
-                      value={t.name}
-                      onChange={() => {
+                      onClick={() => {
                         setSelectedTechnique(t);
                         setSecondsIn(t.secondsIn);
                         setSecondsOut(t.secondsOut);
                       }}
-                    />
-                    {t.name}
+                    >
+                      {t.name}
+                    </button>
                   </label>
                 </div>
               ))}

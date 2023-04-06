@@ -40,7 +40,6 @@
   line-height: 1.5;
 }
 
-
 .inputs {
   justify-content: center;
   display: flex;
@@ -59,11 +58,12 @@
 
 .breathBtnContainer p {
   margin-bottom: 6%;
+
   font-weight: 300;
   line-height: 1.5;
 }
 
-.radioLabel {
+.buttonTechnique {
   all: unset;
   text-transform: uppercase;
   display: flex;
@@ -81,21 +81,13 @@
   width: 330px;
 }
 
-.radioLabel:active {
+.buttonTechnique:focus {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
       padding-box padding-box,
     linear-gradient(-225deg, rgb(117, 240, 240), rgb(117, 117, 240)) border-box
       border-box;
   border: 1px solid transparent;
   color: white;
-}
-
-.radioInput[type='radio'] {
-  display: none;
-}
-
-.radioLabel:hover {
-  background-color: #f7f7f7;
 }
 
 .breathForm {
@@ -121,7 +113,7 @@
 }
 
 .input:valid + .emptyspan::before {
-  content: '✓';
+  content: "✓";
   color: green;
 }
 
@@ -131,8 +123,17 @@
     gap: 10px;
   }
 
-  .radioLabel {
-    width: 160px;
+  .buttonTechnique {
+    width: 170px;
+  }
+
+  .lungaWrapper {
+    padding-bottom: 0;
+  }
+
+  .breathBtnContainer p {
+    padding-left: 6%;
+    padding-right: 6%;
   }
 
   .breathForm {
